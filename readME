@@ -1,0 +1,48 @@
+Building a simple Web-Application for Analyzing Web-Sites
+
+The objective is to build a web-application that does some analysis of a web-page/URL.
+The application should show a form with a text-field thus the user can type in the URL of the webpage being analyzed.
+Additionally to form should contain a button for sending the input to the server as well as to trigger the server-side analysis process.
+After processing the results should be shown to the user in terms of a simple table below to the form.
+The result comprises the following information:
+
+=> What HTML version has the document?
+=> What is the page title?
+=> How many headings of what level are in the document?
+=> How many internal and external links are in the document? Are there any inaccessible
+links and how many?
+=> Did the page contain a login-form?
+
+To run application:
+=> node server.js
+=>it run on port 3000: http://localhost:3000/
+
+view:
+I am executed java script template "EJS template".
+It contains two file 1)urlForm.ejs 2) pageContent.ejs
+
+public:
+it contain CSS and one background image.
+
+uncompress:
+I am also sending uncompress folder which contain to have a reference.
+1)server.js and style.css
+
+The building application:
+1) Install all project dependencies like express, cheerio, bodyParser, gulp to minify CSS&JS.
+2) To find HTML version without document load was difficult. So I used regular expression to check if the DOCTYPE +
+tag contain old way of Doctype.
+3) It was unclear to me what level than I create an array to load all (h1 to h6) heading level.
+4) Parse url to get host name and than check host name with website anchor tag <a> also I am checking
+relative path and external link if not in hostname.
+5)If the load html content from cheero has any form a iam seeting it as Form exist or form does not exist.
+
+HTTP status:
+I am setting response status according error object contain error.code and set response
+Register some 4xx status code with res res.status(404);
+checking error.code === "ENOTFOUND".
+
+Gulp to minify CSS and uglify js:
+I am using Gulp for optimized CSS and JavaScript.
+minify CSS: run command "gulp minify-css"
+uglify JS: run command  "gulp minify-js"

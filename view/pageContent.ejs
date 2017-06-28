@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta charset="UTF-8">
+    <title>Page Content</title>
+</head>
+<body>
+
+<table id="miyazaki">
+    <caption>Analyzing Web-Sites</caption>
+    <thead>
+    <tr>
+        <th>Html-Version
+        <th>Page-Title
+        <th>Headings-Level
+        <th>Form
+    <tbody>
+    <tr>
+        <td data-th="Html5-Version"><%= htmlVersion %> </td>
+        <td data-th="Page-Title"><%= title %></td>
+        <td data-th="Headings-Level">
+            <p>Heading Lengths: <%= headersLength %></p>
+            <p>Heading Levels: <%=header%> </p>
+        </td>
+        <td data-th="Form"><p><%= form %></p> </td>
+    </tr>
+    <tr class="subHeading">
+        <th>External Links
+        <th>Internal Links
+        <th>Inaccessible Links:
+    <tr>
+        <td data-th="External Links"><p>External Links:</p>
+            <ul>
+                <% for(var i = 0; i < externalLinksArr.length; i++) { %>
+                <li><a href=<%= externalLinksArr[i].href %>><%= externalLinksArr[i].text %></a></li>
+                <% } %>
+            </ul>
+        </td>
+        <td data-th="Internal Links">
+            <p>Internal Links:</p>
+            <ul>
+                <% for(var i = 0; i < internalLinksArr.length; i++) { %>
+                <li><a href=<%= internalLinksArr[i].href %>><%= internalLinksArr[i].text %></a></li>
+                <% } %>
+            </ul>
+        </td>
+        <td dat-th="Inaccessible Links">
+            <p>Inaccessible Links:</p>
+            <ul>
+                <% for(var i = 0; i < inaccessibleLinksArr.length; i++) { %>
+                <li><a href=<%= inaccessibleLinksArr[i].href %>><%= inaccessibleLinksArr[i].text %></a></li>
+                <% } %>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

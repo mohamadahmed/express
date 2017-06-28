@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Web Analysis</title>
+</head>
+<body>
+
+<div id="form-main">
+    <div id="form-div">
+        <form class="form" id="form1" action="/pageContent" method="post">
+
+            <p class="name">
+                Website: <input type="url" name="website" >
+            </p>
+            <% if(error !== "no error") { %>
+            <p class="error">
+                Error status: <%=error%>
+                <br>
+                Http status: <%=errorStatus%>
+            </p>
+            <% } %>
+
+
+            <div class="submit">
+                <input type="submit" value="SEND" id="button-blue"/>
+                <div class="ease"></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
